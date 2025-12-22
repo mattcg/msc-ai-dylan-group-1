@@ -15,7 +15,7 @@ def get_stations():
 		stations = Stations().region('MT').fetch()
 	return stations
 
-def get_daily_weather_data(start_date, end_date=None):
+def get_daily_weather_data(start_date: datetime, end_date: datetime = None):
 	"""
 	Fetch daily aggregated weather data from Malta for a given date range.
 
@@ -32,7 +32,7 @@ def get_daily_weather_data(start_date, end_date=None):
 	data.aggregate('1D', True) # Calculate averages/sums across weather stations.
 	return data.fetch()
 
-def get_hourly_weather_data(start_time, end_time):
+def get_hourly_weather_data(start_time: datetime, end_time: datetime):
 	"""
 	Fetch hourly aggregated weather data from Malta for a given date and time range.
 
@@ -48,7 +48,7 @@ def get_hourly_weather_data(start_time, end_time):
 	data.aggregate('1H', True) # Calculate averages/sums across weather stations.
 	return data.fetch()
 
-def rain_on_date(date):
+def rain_on_date(date: datetime) -> bool:
 	"""
 	Check if it rained on a specific date in Malta.
 
@@ -63,7 +63,7 @@ def rain_on_date(date):
 		return weather_data['prcp'].values[0] > 0
 	return False
 
-def rain_before(date, time, hours):
+def rain_before(date: datetime, time, hours) -> bool:
 	"""
 	Check if it rained within a specified number of hours before a given date and time.
 
