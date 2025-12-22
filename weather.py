@@ -45,7 +45,7 @@ def get_hourly_weather_data(start_time: datetime, end_time: datetime):
 	"""
 
 	data = Hourly(get_stations(), start_time, end_time)
-	data.aggregate('1H', True) # Calculate averages/sums across weather stations.
+	data.aggregate('1h', True) # Calculate averages/sums across weather stations.
 	return data.fetch()
 
 def rain_on_date(date: datetime) -> bool:
