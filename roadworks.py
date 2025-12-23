@@ -67,7 +67,7 @@ def had_roadworks(locality: str, street: str, time_stamp: datetime) -> bool:
 	street, locality = street.upper().translate(mt_table), locality.upper().translate(mt_table)
 
 	# Remove prefix from street names for broader matching e.g. "Triq Dawret il-Gudja" matches "Dawret il-Gudja".
-	street = street.replace('TRIQ ', '', count=1)
+	street = street.replace('TRIQ ', '', 1) # Named count=1 parameter is only supported in Python >= 3.13.
 
 	# Handle case where time_stamp is a string, for convenience.
 	if isinstance(time_stamp, str):
