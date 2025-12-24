@@ -23,8 +23,12 @@ import json, re, pandas
 
 from datetime import datetime
 
+STREET_FIX = re.compile(r'\b(triq|street|vjal|avenue|road)\b', re.IGNORECASE)
+
+# A kind of normalisation table for Maltese characters.
+MT_TABLE = str.maketrans('ĊĠĦŻ', 'CGHZ')
+
 closures = []
-mt_table = str.maketrans('ĊĠĦŻ', 'CGHZ') # A kind of normalisation table for Maltese characters.
 
 def parse_roadworks_data(attr: dict) -> dict:
 	"""
@@ -37,10 +41,10 @@ def parse_roadworks_data(attr: dict) -> dict:
 	dict: A dictionary containing parsed roadworks information.
 	"""
 	return {
-		'locality_name': attr['rw_LocalityName'].upper().translate(mt_table),
+		'locality_name': attr['rw_LocalityName'].upper().translate(MT_TABLE),
 
 		# Normalise street names by removing spaces after articles like "TRIQ IS- SULTAN" and ensuring uppercase.
-		'street_name': re.sub(r'([LRSTXZ])- ', r'\1-', attr['rw_StreetFullname'], flags=re.IGNORECASE).upper().translate(mt_table),
+		'street_name': re.sub(r'([LRSTXZ])- ', r'\1-', attr['rw_StreetFullname'], flags=re.IGNORECASE).upper().translate(MT_TABLE),
 		'from_date': datetime.fromisoformat(attr['rw_DateFrom']),
 		'to_date': datetime.fromisoformat(attr['rw_DateTo']),
 		'id': attr['rw_id']
@@ -64,10 +68,10 @@ def had_roadworks(locality: str, street: str, time_stamp: datetime) -> bool:
 	"""
 
 	# Normalise locality and street names for comparison.
-	street, locality = street.upper().translate(mt_table), locality.upper().translate(mt_table)
+	street, locality = street.upper().translate(MT_TABLE), locality.upper().translate(MT_TABLE)
 
-	# Remove prefix from street names for broader matching e.g. "Triq Dawret il-Gudja" matches "Dawret il-Gudja".
-	street = street.replace('TRIQ ', '', 1) # Named count=1 parameter is only supported in Python >= 3.13.
+	# Remove prefix/suffix from street names for broader matching e.g. "Triq Dawret il-Gudja" matches "Dawret il-Gudja".
+	street = STREET_FIX.sub('', street).strip()
 
 	# Handle case where time_stamp is a string, for convenience.
 	if isinstance(time_stamp, str):
