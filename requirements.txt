@@ -1,4 +1,5 @@
 pandas == 2.3.*
+numpy == 1.24.*
 
 # This specific version of meteostat is require as 2.x.x introduced breaking changes.
 meteostat == 1.7.6
