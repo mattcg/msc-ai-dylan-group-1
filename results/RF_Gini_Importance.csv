@@ -1,0 +1,6 @@
+Feature,Gini Importance
+affected_party,0.38997748805880644
+primary_accident_type_code,0.3023240426199945
+vehicle_type_score,0.16425172569469343
+age_min_encoded,0.09188602233960178
+rain_today,0.05156072128690394
