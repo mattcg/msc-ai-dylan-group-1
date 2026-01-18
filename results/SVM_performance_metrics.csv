@@ -1,0 +1,5 @@
+Performance_Metrics:,Support_Vector_Machine_Values
+F1Score,0.8080453003672246
+balanced_accuracy,0.746031746031746
+accuracy,0.8085106382978723
+mean fit time,0.03272703488667806
