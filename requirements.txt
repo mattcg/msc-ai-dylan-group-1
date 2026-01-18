@@ -1,5 +1,8 @@
 pandas == 2.3.*
-numpy == 1.24.*
+numpy == 2.4.*
+scikit-learn == 1.8.*
+imbalanced-learn == 0.14.*
+matplotlib == 3.10.*
 
 # This specific version of meteostat is require as 2.x.x introduced breaking changes.
 meteostat == 1.7.6
