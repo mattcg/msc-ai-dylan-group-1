@@ -1,0 +1,7 @@
+Feature,Permutation Importance
+affected_party,0.1114285714285714
+primary_accident_type_code,0.027619047619047606
+rush_hour,0.001904761904761898
+age_min_encoded,0.001904761904761896
+vehicle_type_score,-0.004761904761904778
+rain_today,-0.017142857142857158
