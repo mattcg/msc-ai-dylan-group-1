@@ -1,5 +1,5 @@
 Performance_Metrics:,XGBoost_Metrics_Values
-F1Score,0.576677805625174
-balanced_accuracy,0.5952380952380952
-accuracy,0.5714285714285714
-mean fit time,0.0685493532816569
+F1Score,0.6933204384268216
+balanced_accuracy,0.7255291005291005
+accuracy,0.6808510638297872
+mean fit time,0.06329109668731689
