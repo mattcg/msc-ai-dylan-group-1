@@ -1,0 +1,7 @@
+feature,importance
+affected_party,0.37147808
+rain_today,0.17761132
+primary_accident_type_code,0.14678878
+age_min_encoded,0.14496581
+vehicle_type_score,0.11446289
+rush_hour,0.04469322
