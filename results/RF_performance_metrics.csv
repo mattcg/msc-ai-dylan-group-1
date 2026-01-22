@@ -2,4 +2,4 @@ Performance_Metrics:,Random_Forest_Metrics_Values
 F1Score,0.7987648231663134
 balanced_accuracy,0.7585978835978836
 accuracy,0.7872340425531915
-mean fit time,0.19088062511550058
+mean fit time,0.13730550739500258
