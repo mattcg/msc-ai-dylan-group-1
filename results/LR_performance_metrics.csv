@@ -1,5 +1,5 @@
 Performance_Metrics:,LR_Metrics_Values
-F1Score,0.7326430765729889
-balanced_accuracy,0.6369047619047619
+F1Score,0.7379028981031485
+balanced_accuracy,0.6395502645502645
 accuracy,0.7659574468085106
 mean fit time,

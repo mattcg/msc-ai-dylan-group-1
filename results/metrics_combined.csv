@@ -1,0 +1,5 @@
+Performance_Metrics:,LR,RF,SVM,XGBoost
+F1Score,0.74,0.8,0.81,0.69
+balanced_accuracy,0.64,0.76,0.75,0.73
+accuracy,0.77,0.79,0.81,0.68
+mean fit time,,0.14,0.03,0.06
